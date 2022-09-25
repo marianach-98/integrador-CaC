@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* h6 {
+    text-shadow: 2px 2px #181717d5;
+}
+
+.caption {
+    text-shadow: 2px 2px #181717d5;
+} */
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    box-sizing: border-box;
+    background: url('./src/ba1.jpg') #000000a3;
+    background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0%;
+    color: white;
+    text-shadow: 2px 2px #181818;
+    padding: 7%;
+    text-align: end;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.banner p {
+    width: 50%;
+}
+
+.cards {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.col-md-6 {
+    background-color: rgb(53, 58, 64);
+}
+
+.oradores {
+    font-family: 'Poppins', sans-serif;
+    line-height: 10px;
+}
+
+.oradores p:first-child {
+    font-size: small;
+}
+
+.oradores p:last-child {
+    font-weight: bolder;
+}
+
+.form {
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.subtexto p {
+    font-size: small;
+}
+
+.form button {
+    background-color: rgb(150, 201, 62);
+    border-color: rgb(150, 201, 62);
+    font-size: large;
+}
+
+footer {
+    background: rgb(28,57,71);
+    background: linear-gradient(90deg, rgba(28,57,71,1) 30%, rgba(30,100,143,1) 65%);
+}
+
