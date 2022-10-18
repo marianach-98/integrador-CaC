@@ -12,7 +12,7 @@
     background-size: cover;
     background-position: 0%;
     color: white;
-    text-shadow: 2px 2px #181818;
+    /* text-shadow: 2px 2px #181818; */
     padding: 7%;
     text-align: end;
     justify-content: end;
@@ -21,6 +21,7 @@
 
 .banner p {
     width: 50%;
+    text-shadow: 2px 2px #181818;
 }
 
 .cards {
@@ -32,16 +33,16 @@
     background-color: rgb(53, 58, 64);
 }
 
-.oradores {
+.oradores, .venta {
     font-family: 'Poppins', sans-serif;
-    line-height: 10px;
+    line-height: 15px;
 }
 
-.oradores p:first-child {
+.oradores, .venta p:first-child {
     font-size: small;
 }
 
-.oradores p:last-child {
+.oradores, .venta p:last-child {
     font-weight: bolder;
 }
 
@@ -64,4 +65,3 @@ footer {
     background: rgb(28,57,71);
     background: linear-gradient(90deg, rgba(28,57,71,1) 30%, rgba(30,100,143,1) 65%);
 }
-
