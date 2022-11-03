@@ -47,40 +47,42 @@
 
 <!-- cards -->
 
-<div class="cuadros">
+<section>
+
 <div class="d-flex justify-content-center">
-<div class="row">
-<div class="card-group mt-3 gap-1">
-    <div class="card border border-primary text-center">
+<div class="card-group mt-3 gap-2">
+
+    <div class="btn card border border-1 border-muted text-center" id="card1">
         <div class="card-body">
             <h5 class="card-title">Estudiante</h5>
             <p class="card-text">Tienen un descuento</p>
             <p> <strong>80%</strong> </p>
-            <small class="text-muted">* presentar documentación</small>
+            <small class="">* presentar documentación</small>
         </div>
     </div>
 
-    <div class="card border border-success text-center">
+    <div class="btn card border border-1 border-muted text-center" id="card2">
         <div class="card-body">
             <h5 class="card-title">Trainee</h5>
             <p class="card-text">Tienen un descuento</p>
             <p> <strong>50%</strong> </p>
-            <small class="text-muted">* presentar documentación</small>
+            <small class="">* presentar documentación</small>
             </div>
     </div>
 
-    <div class="card border border-warning text-center">
+    <div class="btn card border border-1 border-muted text-center" id="card3">
         <div class="card-body">
             <h5 class="card-title">Junior</h5>
             <p class="card-text">Tienen un descuento</p>
             <p> <strong>15%</strong> </p>
-            <small class="text-muted">* presentar documentación</small>
+            <small class="">* presentar documentación</small>
         </div>
     </div>
+
 </div>
 </div>
-</div>
-</div>
+
+</section>
 
 <!-- venta -->
 
@@ -92,55 +94,65 @@
 </div>
 
 <!-- form -->
+<section>
 
+<form name="formulario">
 <div class="form">
     <div class="row px-5">
         <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+            <input id="value1" name="value1" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
     </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+            <input id="value2" name="value2" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
     </div>
     </div>
     <div class="py-3 px-5">
-        <input type="text" class="form-control" placeholder="Correo" aria-label="Correo">
+        <input id="value3" name="value3" type="email" class="form-control" placeholder="Correo Electrónico" aria-label="Correo">
     </div>
-    <div>
-        <div class="row py-2 px-5">
+
+    <div class="row py-2 px-5">
             <div class="col">
                 <label for="exampleFormControlInput1" class="form-label">Cantidad</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Cantidad">
+                <input type="number" class="form-control" id="value4" name="value4" placeholder="Cantidad de Tickets">
             </div>
             <div class="col">
                 <label for="selectInput" class="form-label">Categoría</label>
-                <select class="form-select" id="selectInput" aria-label="Default select example">
-                    <option selected></option>
+                <select class="form-select" id="category" name="options" aria-label="Default select example">
+                    <option selected>Elija la categoría</option>
                     <option value="1">Estudiante</option>
                     <option value="2">Trainee</option>
                     <option value="3">Junior</option>
                 </select>
             </div>
-        </div>
     </div>
-    <div class="py-2 px-5">
-    <div class="alert alert-primary" role="alert">
+
+<!-- total de pago -->
+
+<div class="py-2 px-5">
+    <div class="alert alert-primary" role="alert" id="total">
         Total a Pagar: $
     </div>
-    </div>
+</div>
+
+<!-- botones -->
+
     <div class="row py-2 px-5">
         <div class="col">
         <div class="d-grid">
-            <button type="button" class="btn btn-success">Borrar</button>
+            <button id="button1" type="button" class="btn btn-success">Borrar</button>
         </div>
         </div>
         <div class="col">
         <div class="d-grid">
-            <button type="button" class="btn btn-success">Resumen</button>
+            <!-- <a href="./resume.html" class="btn btn-success" id="button2" role="button">Resumen</a> -->
+            <button id="button2" type="button" class="btn btn-success">Resumen</button>
         </div>
     </div>
     </div>
 </div>
+</form>
 
+</section>
 
 </main>
 
@@ -179,5 +191,14 @@
     </footer>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<script src="dom.js"></script>
+<script src="func-cards.js"></script>
+<script src="func-buttons.js"></script>
+<script src="func-options.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
+
 </html>

@@ -12,7 +12,6 @@
     background-size: cover;
     background-position: 0%;
     color: white;
-    /* text-shadow: 2px 2px #181818; */
     padding: 7%;
     text-align: end;
     justify-content: end;
@@ -55,7 +54,7 @@
     font-size: small;
 }
 
-.form button {
+.form button, .form a {
     background-color: rgb(150, 201, 62);
     border-color: rgb(150, 201, 62);
     font-size: large;
