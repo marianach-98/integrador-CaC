@@ -1,15 +1,15 @@
 function erase(e) {
     e.preventDefault()
-    formulario.value1.value = ''
-    formulario.value2.value = ''
-    formulario.value3.value = ''
-    formulario.value4.value = ''
+    formulario.value1.value = '',
+    formulario.value2.value = '',
+    formulario.value3.value = '',
+    formulario.value4.value = '',
     formulario.options.value = ''
 
     for (let item of cards) {
-        item.classList.replace('text-bg-danger', 'border-muted')
-        item.classList.replace('text-bg-warning', 'border-muted')
-        item.classList.replace('text-bg-primary', 'border-muted')
+        item.classList.replace('text-bg-danger', 'border-muted');
+        item.classList.replace('text-bg-warning', 'border-muted');
+        item.classList.replace('text-bg-primary', 'border-muted');
         item.ariaChecked = true
     }
 }
@@ -17,6 +17,7 @@ function erase(e) {
 function checkError() {
 
     const value5 =
+        formulario.options.value === '0' && 'Otro' ||
         formulario.options.value === '1' && 'Estudiante' ||
         formulario.options.value === '2' && 'Trainee' ||
         formulario.options.value === '3' && 'Junior'
@@ -54,11 +55,11 @@ function checkError() {
     
     if (formulario.value1.value && formulario.value2.value && formulario.value3.value && formulario.value4.value && value5) {
         data = {
-            value1: formulario.value1.value,
-            value2: formulario.value2.value,
-            value3: formulario.value3.value,
-            value4: formulario.value4.value,
-            value5: value5
+            nombre: formulario.value1.value,
+            apellido: formulario.value2.value,
+            correo: formulario.value3.value,
+            cantidad: formulario.value4.value,
+            categoria: value5
         }
     }
     return data
@@ -67,6 +68,10 @@ function checkError() {
 function finalPay() {
 
     let pay 
+
+    if (formulario.options.value === '0') {
+        pay = formulario.value4.value * 200
+    }
 
     if (formulario.options.value === '1') {
         pay = (formulario.value4.value * 200) * 0.2 
@@ -90,13 +95,13 @@ function next() {
 
 function resumen(e) {
     e.preventDefault()
-    checkError()
+    const completeForm = checkError()
     const totalPay = finalPay()
     total.innerText = `Total a pagar: $${totalPay}`
 
     if (totalPay) {
         Swal.fire({
-            title: 'Total a pagar',
+            title: `Resumen`,
             text: `El valor final de tus tickets es: $${totalPay}`,
             icon: 'info',
             showCancelButton: true,
@@ -105,10 +110,11 @@ function resumen(e) {
             confirmButtonText: 'Siguiente',
             cancelButtonText: 'Cancelar',
             }).then((result) => {
-            if (result.isConfirmed) {
-                next()
-                }
-            })
+                if (result.isConfirmed) {
+                    completeForm && sessionStorage.setItem('formulario', JSON.stringify(completeForm))
+                    completeForm && next()
+                    }
+                })
     }
 }
 

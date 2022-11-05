@@ -1,24 +1,28 @@
-//const value5 = document.getElementById('value5')
-//document.getElementById('value1').innerText = form.nombre
-//document.getElementById('value2').innerText = form.apellido
-//document.getElementById('value3').innerText = form.correo
-//document.getElementById('value4').innerText = form.cantidad
+let form = sessionStorage.getItem('formulario')
+form = JSON.parse(form)
 
-//value5.innerText = form.option
+const value5 = document.querySelector('#category')
+document.getElementById('value1').innerText = `Nombre: ${form.nombre}`;
+document.getElementById('value2').innerText = `Apellido: ${form.apellido}`;
+document.getElementById('value3').innerText = `E-mail: ${form.correo}`;
+document.getElementById('value4').innerText = `Cantidad de tickets: ${form.cantidad}`;
+value5.innerText = `Categoría seleccionada: ${form.categoria}`
 
+function buy(e) {
+    e.preventDefault()
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: '¡Gracias por tu compra!',
+        showConfirmButton: false,
+        timer: 1500
+        })
+}
 
-const reName = document.getElementById('reName')
-const reSurname = document.getElementById('reSurname')
-const reMail = document.getElementById('reMail')
-const reQuantity = document.getElementById('reQuantity')
-const optionCard = document.getElementById('optionCard')
+function cancel(e) {
+    e.preventDefault()
+    location.href = "../pages/comprarTickets.html"
+}
 
-reName.innerText = formulario.value1.value
-
-reSurname.innerText = formulario.value2.value
-
-reMail.innerText = formulario.value3.value
-
-reQuantity.innerText = formulario.value4.value
-
-optionCard.innerText = formulario.options.value
+button3.onclick = (e) => { buy(e) }
+button4.onclick = (e) => { cancel(e) }

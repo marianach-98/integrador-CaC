@@ -20,24 +20,26 @@ function cardClick(card) {
     card === card2 && card.classList.replace('border-warning', 'text-bg-warning');
 
     card === card3 && card.classList.replace('border-muted', 'text-bg-primary');
-    card === card3 && card.classList.replace('border-primary', 'text-bg-primary');
+    card === card3 && card.classList.replace('border-primary', 'text-bg-primary')
 
         for (let item of cards) {
             if (item.id !== card.id) {
-                item.classList.replace('text-bg-danger', 'border-muted')
-                item.classList.replace('text-bg-warning', 'border-muted')
-                item.classList.replace('text-bg-primary', 'border-muted')
+                item.classList.replace('text-bg-danger', 'border-muted');
+                item.classList.replace('text-bg-warning', 'border-muted');
+                item.classList.replace('text-bg-primary', 'border-muted');
                 item.ariaChecked = false
             }
         }
 
         select.value =
-        card.id === 'card1' && '1' || card.id === 'card2' && '2' || card.id === 'card3' && '3'
+        card.id === 'card1' && '1' || 
+        card.id === 'card2' && '2' || 
+        card.id === 'card3' && '3'
 }
 
 function events(card) {
-    card.addEventListener('mouseover', () => cardOver(card))
-    card.addEventListener('mouseleave', () => cardLeave(card))
+    card.addEventListener('mouseover', () => cardOver(card));
+    card.addEventListener('mouseleave', () => cardLeave(card));
     card.addEventListener('click', () => cardClick(card))
 }
 

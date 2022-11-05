@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+    <link rel="shortcut icon" href="./../ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="./../../style.css">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -43,30 +44,39 @@
     </header>
 
 <main>
-
-    <div class="card border border-success w-50">
-        <div class="card-header bg-transparent">
-            Resumen de tu compra
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="reName"></li>
-            <li class="list-group-item" id="reSurname"></li>
-            <li class="list-group-item" id="reMail"></li>
-            <li class="list-group-item" id="reQuantity"></li>
-            <li class="list-group-item" id="optionCard"></li>
-        </ul>
+<br>
+<div class="venta d-flex justify-content-center">
+    <div class="py-3">
+        <p class="fs-2 pe-5">Resumen de tu compra</p>
     </div>
+        <ul class="list-group list-group-flush list-group-success">
+            <li class="list-group-item h4" id="value1"></li>
+            <li class="list-group-item h4" id="value2"></li>
+            <li class="list-group-item h4" id="value3"></li>
+            <li class="list-group-item h4" id="value4"></li>
+            <li class="list-group-item h4" id="category"></li>
+        </ul>
+</div>
 
-<button class="btn btn-success" type="button" id="send">Aceptar</button>
+<br>
 
+<div class="h4 text-center text-bg-success p-4" id="total"><strong>Pago total:</strong></div>
 
+<br>
+
+<div class="d-flex justify-content-center gap-4">
+<button class="btn btn-success btn-lg" type="button" id="button3">Comprar</button>
+<button class="btn btn-danger btn-lg" type="button" id="button4">Cancelar</button>
+</div>
+
+<br><br><br>
 
 
 
 </main>
 
 <footer class="container-fluid text-bg-dark mt-3 p-3">
-        <div class="nav-pills nav-justified px-5">
+    <div class="nav-pills nav-justified px-5">
         <ul class="nav justify-content-center gap-5 align-text-center">
             <li>
                 <a href=""></a>
@@ -96,13 +106,14 @@
                 <a href=""></a>
             </li>
         </ul>
-        </div>
-    </footer>
-
+    </div>
+</footer>
 
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="dom.js"></script>
+<script src="func-buttons.js"></script>
 <script src="resume.js"></script>
 </body>
 </html>
