@@ -22,38 +22,37 @@ function checkError() {
         formulario.options.value === '2' && 'Trainee' ||
         formulario.options.value === '3' && 'Junior'
 
+        !value5
+            ? formulario.options.classList.add('border-danger')
+            : formulario.options.classList.add('border-success')
 
-    if (formulario.value1.value === '') {
-        formulario.value1.classList.add('border-danger')
-    } else if (formulario.value1.value !== '') {
-        formulario.value1.classList.remove('border-danger')
-    }
+    const noName = formulario.value1.value 
 
-    if (formulario.value2.value === '') {
-        formulario.value2.classList.add('border-danger')
-    } else if (formulario.value2.value !== ''){
-        formulario.value2.classList.remove('border-danger')
-    }
+        !noName 
+            ? formulario.value1.classList.add('border-danger')
+            : formulario.value1.classList.add('border-success')
 
-    if (formulario.value3.value === '') {
-        formulario.value3.classList.add('border-danger')
-    } else if (formulario.value3.value !== '') {
-        formulario.value3.classList.remove('border-danger')
-    }
+    const noSurname = formulario.value2.value 
 
-    if (formulario.value4.value === '') {
-        formulario.value4.classList.add('border-danger')
-    } else if (formulario.value4.value !== '') {
-        formulario.value4.classList.remove('border-danger')
-    }
+        !noSurname 
+            ? formulario.value2.classList.add('border-danger')
+            : formulario.value2.classList.add('border-success')
 
-    !value5
-        ? formulario.options.classList.add('border-danger')
-        : formulario.options.classList.remove('border-danger')
+    const noMail = formulario.value3.value
+
+        !noMail 
+            ? formulario.value3.classList.add('border-danger')
+            : formulario.value3.classList.add('border-success')
+
+    const noQuantity = formulario.value4.value
+
+        !noQuantity
+            ? formulario.value4.classList.add('border-danger')
+            : formulario.value4.classList.add('border-success')
 
     let data = false
     
-    if (formulario.value1.value && formulario.value2.value && formulario.value3.value && formulario.value4.value && value5) {
+if (formulario.value1.value && formulario.value2.value && formulario.value3.value && formulario.value4.value && value5) {
         data = {
             nombre: formulario.value1.value,
             apellido: formulario.value2.value,
@@ -61,9 +60,17 @@ function checkError() {
             cantidad: formulario.value4.value,
             categoria: value5
         }
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, llena todos los campos requeridos',
+            })
     }
+
     return data
 }
+
 
 function finalPay() {
 
@@ -99,7 +106,7 @@ function resumen(e) {
     const totalPay = finalPay()
     total.innerText = `Total a pagar: $${totalPay}`
 
-    if (totalPay) {
+    if (totalPay && completeForm) {
         Swal.fire({
             title: `Resumen`,
             text: `El valor final de tus tickets es: $${totalPay}`,
@@ -115,7 +122,7 @@ function resumen(e) {
                     completeForm && next()
                     }
                 })
-    }
+    } 
 }
 
 

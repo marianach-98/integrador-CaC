@@ -14,8 +14,8 @@ function buy(e) {
         position: 'center',
         icon: 'success',
         title: '¡Gracias por tu compra!',
+        footer: '<a href="../../index.html">Volver al inicio</a>',
         showConfirmButton: false,
-        timer: 1500
         })
 }
 
